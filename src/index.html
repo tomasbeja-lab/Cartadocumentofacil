@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Completar carta documento e imprimirla | Carta Documento Fácil</title>
+<meta name="description" content="Completá tu carta documento gratis, sin registrarte, e imprimila sobre el formulario del Correo Argentino con cada dato en su casillero. Descargá PDF o Word.">
+<meta name="theme-color" content="#0f3d5e">
+<link rel="canonical" href="__SITE_URL__/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Carta Documento Fácil">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Tu carta documento, en el casillero justo">
+<meta property="og:description" content="Completá tu carta documento gratis, sin registrarte, e imprimila sobre el formulario del Correo Argentino con cada dato en su casillero. Descargá PDF o Word.">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carta Documento Fácil: completá tu carta documento e imprimila sobre el formulario del Correo Argentino">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tu carta documento, en el casillero justo">
+<meta name="twitter:description" content="Completá tu carta documento gratis, sin registrarte, e imprimila sobre el formulario del Correo Argentino con cada dato en su casillero. Descargá PDF o Word.">
+<meta name="twitter:image" content="__SITE_URL__/og-image.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #eef1f5; --surface: #ffffff; --ink: #12202e; --muted: #4f5d6d; --line: #cfd6df;
+  --navy: #0f3d5e; --navy-ink: #ffffff; --amber: #e8a826; --soft: #e2e8ef;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0e151c; --surface: #16202a; --ink: #e8edf2; --muted: #9db0c2; --line: #2b3947; --navy: #6fb4ea; --navy-ink: #0a1823; --soft: #1d2a36; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+header.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 650; text-decoration: none; }
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+.btn { display: inline-block; font: inherit; font-weight: 650; text-decoration: none; cursor: pointer; border-radius: 8px; padding: 12px 20px; border: 1.5px solid var(--navy); color: var(--navy); background: transparent; }
+.btn.primary { background: var(--navy); color: var(--navy-ink); }
+.btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.btn.small { padding: 8px 14px; font-size: 15px; }
+
+.hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding: 34px 0 54px; }
+h1 { font: 700 clamp(34px, 5.2vw, 56px)/1.08 Georgia, "Times New Roman", serif; margin: 0 0 18px; letter-spacing: -0.01em; }
+.lead { font-size: 19px; color: var(--muted); margin: 0 0 26px; max-width: 34em; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.fine { font-size: 14px; color: var(--muted); margin: 14px 0 0; }
+.sheet { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; box-shadow: 0 10px 30px rgba(10,30,50,.12); }
+.sheet svg { display: block; width: 100%; height: auto; }
+
+section { padding: 44px 0; border-top: 1px solid var(--line); }
+h2 { font: 700 clamp(26px, 3.4vw, 34px)/1.15 Georgia, "Times New Roman", serif; margin: 0 0 22px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: paso; list-style: none; padding: 0; margin: 0; }
+.steps li { counter-increment: paso; padding: 0; }
+.steps li::before { content: counter(paso); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--navy); color: var(--navy-ink); font: 700 18px Georgia, serif; margin-bottom: 12px; }
+.steps h3 { margin: 0 0 6px; font-size: 19px; }
+.steps p { margin: 0; color: var(--muted); font-size: 16px; }
+.feat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 40px; list-style: none; padding: 0; margin: 0; }
+.feat li { padding-left: 26px; position: relative; }
+.feat li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 12px; height: 7px; border-left: 3px solid var(--amber); border-bottom: 3px solid var(--amber); transform: rotate(-45deg) translateY(-30%); }
+.feat b { display: block; }
+.feat span { color: var(--muted); font-size: 16px; }
+.cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
+.card h3 { margin: 0 0 8px; font-size: 18px; }
+.ad-tag { display: inline-block; font-size: 12px; font-weight: 650; letter-spacing: .04em; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 1px 8px; margin: 0 0 10px; }
+.ad-lead { margin: -8px 0 22px; color: var(--muted); }
+.ad { display: flex; flex-direction: column; }
+.ad-logo { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; min-height: 84px; display: grid; place-items: center; }
+.ad-logo img, .ad-logo svg { display: block; max-width: 100%; height: auto; }
+.ad-name { font: 700 19px/1.2 Georgia, "Times New Roman", serif; color: #3d3d3d; text-align: center; letter-spacing: .02em; }
+.ad-name small { display: block; font: 600 11px/1.6 system-ui, sans-serif; letter-spacing: .12em; color: #8a6d2f; margin-top: 4px; }
+.ad address { font-style: normal; color: var(--muted); font-size: 15px; margin: 4px 0; }
+.cols.one { grid-template-columns: minmax(0, 560px); }
+.ad-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 0; }
+.ad-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+.card p, .card ol { margin: 6px 0; color: var(--muted); font-size: 16px; }
+.card ol { padding-left: 20px; }
+footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 14px; }
+  .steps, .feat, .cols { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 18px; margin: 0 0 10px; }
+.faq summary { cursor: pointer; font-weight: 650; padding: 14px 0; list-style-position: outside; }
+.faq summary:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
+.faq p { margin: 0 0 14px; color: var(--muted); font-size: 16px; }
+.guide-link { margin: 22px 0 0; font-size: 16px; }
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Carta Documento Fácil",
+  "url": "__SITE_URL__/",
+  "inLanguage": "es-AR"
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Carta Documento Fácil",
+  "url": "__SITE_URL__/app/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, Android, iOS, Windows, macOS",
+  "browserRequirements": "Requiere JavaScript",
+  "inLanguage": "es-AR",
+  "isAccessibleForFree": true,
+  "description": "Herramienta para completar una carta documento e imprimirla sobre el formulario preimpreso del Correo Argentino, con vista previa, calibración de la impresora y descarga en PDF o Word.",
+  "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "ARS"
+  }
+ }
+]
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/icon-192.png" alt="" width="34" height="34"> Carta Documento Fácil</a>
+    <a class="btn small primary" href="/app/">Abrir la aplicación</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Tu carta documento, en el casillero justo.</h1>
+      <p class="lead">Completá los datos, calibrá tu impresora una sola vez e imprimí sobre el formulario preimpreso del Correo Argentino. Cada dato queda en su lugar, sin que se corra nada.</p>
+      <div class="cta">
+        <a class="btn primary" href="/app/">Abrir la aplicación</a>
+        <button class="btn" id="btnInstall" type="button" hidden>Instalar en este dispositivo</button>
+        <a class="btn" id="linkInstall" href="#instalar">Cómo instalarla</a>
+      </div>
+      <p class="fine">Gratis, sin cuenta y sin conexión. Tus datos no salen de tu dispositivo.</p>
+    </div>
+    <div class="sheet" aria-hidden="true">
+      <svg viewBox="0 0 320 380" role="img" aria-label="">
+        <rect x="0" y="0" width="320" height="380" fill="#f7f9fb" stroke="#cfd6df"/>
+        <rect x="22" y="20" width="150" height="26" fill="#e8a826"/>
+        <rect x="22" y="48" width="276" height="14" fill="#1f3a63"/>
+        <rect x="172" y="64" width="126" height="86" fill="#f1ecc2"/>
+        <g stroke="#9aa8bd" stroke-width="1" fill="none">
+          <rect x="22" y="64" width="276" height="130"/><line x1="172" y1="64" x2="172" y2="194"/>
+          <line x1="22" y1="112" x2="298" y2="112"/><line x1="22" y1="150" x2="298" y2="150"/><line x1="22" y1="172" x2="298" y2="172"/>
+          <line x1="22" y1="194" x2="298" y2="194"/>
+          <rect x="22" y="212" width="276" height="146"/>
+        </g>
+        <g font-family="system-ui, sans-serif" font-size="7" fill="#6a7fa3">
+          <text x="26" y="74">REMITENTE</text><text x="176" y="74">DESTINATARIO</text>
+          <text x="26" y="121">DOMICILIO</text><text x="176" y="121">DOMICILIO</text>
+        </g>
+        <g fill="#12202e">
+          <rect x="30" y="86" width="96" height="6" rx="2"/><rect x="180" y="86" width="84" height="6" rx="2"/>
+          <rect x="30" y="132" width="118" height="6" rx="2"/><rect x="180" y="132" width="100" height="6" rx="2"/>
+          <rect x="30" y="156" width="26" height="5" rx="2"/><rect x="74" y="156" width="52" height="5" rx="2"/>
+          <rect x="180" y="156" width="26" height="5" rx="2"/><rect x="224" y="156" width="52" height="5" rx="2"/>
+          <rect x="30" y="226" width="256" height="5" rx="2"/><rect x="30" y="238" width="250" height="5" rx="2"/><rect x="30" y="250" width="256" height="5" rx="2"/>
+          <rect x="30" y="262" width="240" height="5" rx="2"/><rect x="30" y="274" width="256" height="5" rx="2"/><rect x="30" y="286" width="150" height="5" rx="2"/>
+          <rect x="106" y="326" width="108" height="5" rx="2"/><rect x="124" y="338" width="72" height="5" rx="2"/>
+        </g>
+        <g stroke="#c4161c" stroke-width="1.2"><line x1="14" y1="14" x2="14" y2="26"/><line x1="8" y1="20" x2="20" y2="20"/><line x1="306" y1="14" x2="306" y2="26"/><line x1="300" y1="20" x2="312" y2="20"/><line x1="14" y1="354" x2="14" y2="366"/><line x1="8" y1="360" x2="20" y2="360"/><line x1="306" y1="354" x2="306" y2="366"/><line x1="300" y1="360" x2="312" y2="360"/></g>
+      </svg>
+    </div>
+  </div>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <ol class="steps">
+      <li><h3>Completá</h3><p>Cargá remitente, destinatario y el texto de la carta. Ves cómo queda sobre el formulario antes de imprimir.</p></li>
+      <li><h3>Calibrá tu impresora, una sola vez</h3><p>Imprimís una hoja de prueba sobre un formulario y le sacás una foto. La aplicación mide el desvío en milímetros y se ajusta sola.</p></li>
+      <li><h3>Descargá e imprimí</h3><p>Bajás el PDF listo para imprimir, o el Word si querés seguir editando, y lo imprimís sobre el formulario.</p></li>
+    </ol>
+    <p class="guide-link"><a href="/guia/como-completar-carta-documento/">Guía paso a paso: cómo completar una carta documento →</a></p>
+  </section>
+
+  <section>
+    <h2>Qué incluye</h2>
+    <ul class="feat">
+      <li><b>Vista previa sobre el formulario</b><span>Ves la carta dentro de los recuadros del Correo, no sobre una hoja en blanco.</span></li>
+      <li><b>Calibración con una foto</b><span>Sin reglas ni cuentas: la aplicación corrige el corrimiento de tu impresora.</span></li>
+      <li><b>PDF y Word</b><span>El PDF mantiene las posiciones exactas. El Word te deja editar cada casillero.</span></li>
+      <li><b>Tus cartas guardadas</b><span>Guardá modelos, volvé a abrirlos y hacé copias de seguridad.</span></li>
+      <li><b>Funciona sin conexión</b><span>Una vez abierta, anda en el celular o la PC aunque no haya internet.</span></li>
+      <li><b>Privada</b><span>Todo se procesa en tu dispositivo. No hay cuentas ni servidores con tus datos.</span></li>
+    </ul>
+  </section>
+
+  <section id="preguntas">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Esta página envía la carta documento?</summary><p>No. Te ayuda a completarla e imprimirla sobre el formulario preimpreso, con cada dato en su casillero. El envío se hace en el Correo Argentino, que cobra su tarifa vigente.</p></details>
+      <details><summary>¿Qué diferencia hay con la carta documento online del Correo?</summary><p>El Correo Argentino tiene su propio servicio online para redactar, enviar y pagar la carta desde la computadora. Carta Documento Fácil es para quienes usan el formulario impreso: lo completás acá y lo imprimís sin que se corra nada.</p></details>
+      <details><summary>¿Con qué formulario funciona?</summary><p>Con el formulario preimpreso del Correo Argentino que tiene dos secciones, “A.R. – Carta documento” y “Carta documento”, en papel Legal (215,9 × 355,6 mm). Otros modelos pueden no coincidir.</p></details>
+      <details><summary>¿Por qué hay que calibrar la impresora?</summary><p>Cada impresora corre el papel unos milímetros distinto. La calibración se hace una sola vez: imprimís una hoja de prueba sobre un formulario, le sacás una foto y la aplicación corrige el desvío.</p></details>
+      <details><summary>¿Dónde quedan mis datos?</summary><p>Solo en tu dispositivo. Lo que escribís no se envía a ningún servidor. Si guardás cartas, quedan en el navegador que usaste.</p></details>
+      <details><summary>¿Puedo usarla desde el celular?</summary><p>Sí: se completa e instala en el celular. Para imprimir, descargá el PDF y mandalo a una impresora en papel Legal y a escala 100 %.</p></details>
+      <details><summary>¿La herramienta me dice qué tengo que escribir?</summary><p>No. Incluye un ejemplo para que veas cómo queda, pero no brinda asesoramiento legal. Si hay plazos o derechos en juego, consultá con un abogado.</p></details>
+      <details><summary>¿Cuánto cuesta?</summary><p>La herramienta es gratis y no pide registrarte. El envío de la carta documento se paga en el Correo Argentino.</p></details>
+    </div>
+  </section>
+
+  <section id="instalar">
+    <h2>Instalala como aplicación</h2>
+    <div class="cols">
+      <div class="card"><h3>Android y computadora</h3>
+        <p>Abrí la aplicación en Chrome o Edge y tocá <b>Instalar</b> (el ícono en la barra de direcciones o el botón de esta página). Queda con su ícono, como cualquier otra aplicación.</p></div>
+      <div class="card"><h3>iPhone y iPad</h3>
+        <ol><li>Abrí esta página en <b>Safari</b>.</li><li>Tocá el botón <b>Compartir</b>.</li><li>Elegí <b>Agregar a inicio</b>.</li></ol></div>
+    </div>
+  </section>
+
+  <section id="estudios">
+    <p class="ad-tag">Publicidad</p>
+    <h2>Si necesitás un abogado</h2>
+    <p class="ad-lead">Un estudio jurídico al que podés consultar antes de enviar tu carta.</p>
+    <div class="cols one">
+      <article class="card ad">
+        <div class="ad-logo"><svg class="logo-diez" width="360" height="90" viewBox="0 0 800 200" role="img" aria-label="Diez, Basanta, Sar Diez y Asoc. Estudio jurídico"><g transform="translate(0 42)"><rect x="6" y="6" width="108" height="12" fill="#123b36"/><rect x="18" y="26" width="20" height="66" fill="#123b36"/><rect x="50" y="26" width="20" height="66" fill="#b8893a"/><rect x="82" y="26" width="20" height="66" fill="#123b36"/><rect x="6" y="100" width="108" height="7" fill="#123b36"/><rect x="0" y="110" width="120" height="6" fill="#123b36"/></g><text x="150" y="92" font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif" font-weight="600" font-size="34" fill="#123b36" textLength="600" lengthAdjust="spacing">DIEZ · BASANTA · SAR DIEZ</text><rect x="150" y="106" width="600" height="2" fill="#b8893a"/><text x="150" y="142" font-family="Montserrat, Arial, Helvetica, sans-serif" font-weight="600" font-size="26" fill="#123b36" textLength="150" lengthAdjust="spacing">&amp; ASOC.</text></svg></div>
+        <h3>Derecho comercial y laboral</h3>
+        <address>Lavalle 1506, Piso 9° Of. “34”, C.A.B.A.<br>Tel. <a href="tel:+541143711548">(011) 4371-1548</a></address>
+        <p class="ad-actions">
+          <a class="btn small primary" href="https://wa.me/5491168703785?text=Hola%2C%20te%20escribo%20desde%20Carta%20Documento%20F%C3%A1cil." target="_blank" rel="noopener sponsored">WhatsApp</a>
+          <a class="btn small" href="tel:+541143711548">Llamar</a>
+        </p>
+      </article>
+    </div>
+    <p class="ad-note">Publicidad. El estudio es responsable de sus servicios. Carta Documento Fácil no forma parte de él ni brinda asesoramiento legal.</p>
+  </section>
+
+  <section>
+    <h2>Antes de usarla</h2>
+    <div class="cols">
+      <div class="card"><h3>Formulario compatible</h3>
+        <p>Hoy está medida para el formulario preimpreso del Correo Argentino con las dos secciones, “A.R. – Carta documento” y “Carta documento”, en papel Legal (215,9 × 355,6 mm). Otros modelos pueden no coincidir.</p></div>
+      <div class="card"><h3>Importante</h3>
+        <p>Es una herramienta para completar e imprimir. No brinda asesoramiento legal ni revisa lo que escribís: conviene que un abogado revise el texto. No está afiliada al Correo Argentino.</p></div>
+    </div>
+  </section>
+
+  <footer>Carta Documento Fácil. <span id="statsNote">Lo que escribís en tus cartas se procesa en tu dispositivo y no se envía a ningún servidor. Para saber cuánta gente visita el sitio usamos Cloudflare Web Analytics, que no usa cookies ni recolecta datos personales.</span> <a href="/guia/como-completar-carta-documento/">Cómo completar una carta documento</a> · <a href="/privacidad/">Privacidad</a></footer>
+</div>
+
+<script>
+(function () {
+  var evento = null, btn = document.getElementById('btnInstall'), link = document.getElementById('linkInstall');
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); evento = e; btn.hidden = false; link.hidden = true;
+  });
+  btn.addEventListener('click', function () {
+    if (!evento) return;
+    evento.prompt();
+    evento.userChoice.then(function () { evento = null; btn.hidden = true; link.hidden = false; });
+  });
+  window.addEventListener('appinstalled', function () { btn.hidden = true; link.hidden = true; });
+  if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {}); });
+})();
+</script>
+<script src="/analytics.js" defer></script>
+</body>
+</html>

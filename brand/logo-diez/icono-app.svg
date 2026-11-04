@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 120 120" role="img" aria-label="Ícono de la aplicación">
+<title>Ícono de la aplicación</title>
+
+
+<rect width="120" height="120" rx="24" fill="#123b36"/><g transform="translate(23 24) scale(0.62)"><rect x="6" y="6" width="108" height="12" fill="#ffffff"/>
+<rect x="18" y="26" width="20" height="66" fill="#ffffff"/>
+<rect x="50" y="26" width="20" height="66" fill="#d9b46a"/>
+<rect x="82" y="26" width="20" height="66" fill="#ffffff"/>
+<rect x="6" y="100" width="108" height="7" fill="#ffffff"/>
+<rect x="0" y="110" width="120" height="6" fill="#ffffff"/></g>
+</svg>

@@ -1,0 +1,36 @@
+LOGO: DIEZ · BASANTA · SAR DIEZ & ASOC. (opción A, "Tres columnas")
+===================================================================
+
+ARCHIVOS
+  logo-horizontal.svg            Logo completo para fondos claros
+  logo-horizontal-blanco.svg     Logo completo para fondos oscuros
+  marca-columnas.svg / .png      Solo el símbolo (3 columnas), fondo claro
+  marca-columnas-blanca.svg/.png Solo el símbolo, para fondos oscuros
+  logo-vertical.svg / -blanco.svg  Versión vertical (claro y oscuro)
+  logo-una-tinta-negro.svg       Una sola tinta, para fotocopias, sellos y grabados
+  icono-app.svg, icono-512.png, icono-192.png, icono-180-ios.png
+                                 Ícono cuadrado (aplicación, pantalla de inicio del celular)
+  favicon.ico, favicon.svg, favicon-16/32/48/64/256.png
+                                 Favicon para el sitio web (pestaña del navegador)
+  perfil-redes-1024.png          Foto de perfil para WhatsApp Business, Google Maps y redes
+
+COLORES
+  Verde profundo  #123B36   (símbolo y texto principal)
+  Latón           #B8893A   (columna central y línea; sobre fondo oscuro: #D9B46A)
+  Gris            #5B6470   (texto secundario)
+
+TIPOGRAFÍAS (gratuitas, en fonts.google.com)
+  Nombre:      Cormorant Garamond SemiBold (600)
+  Secundaria:  Montserrat Medium (500) y SemiBold (600)
+
+IMPORTANTE SOBRE LAS LETRAS
+  Los .png y los símbolos (sin texto) están terminados y son exactos.
+  En los .svg del logo completo las letras son TEXTO, no curvas: se ven bien si la
+  persona tiene instaladas las tipografías de arriba (o abre el archivo con internet).
+  Sin ellas, se ve con una tipografía parecida. Para imprenta, papelería o placas
+  hay que convertir las letras a curvas con las tipografías originales.
+
+USO
+  - Dejar alrededor del logo un espacio libre igual al ancho de una columna del símbolo.
+  - Tamaño mínimo: 120 px de ancho en pantalla (logo completo); 24 px el símbolo solo.
+  - No estirarlo, no cambiar los colores ni apoyarlo sobre fotos que le quiten contraste.

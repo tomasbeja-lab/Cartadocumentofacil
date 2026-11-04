@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Editor de carta documento gratis | Carta Documento Fácil</title>
+<meta name="description" content="Escribí tu carta documento sobre el formulario del Correo Argentino, calibrá tu impresora y descargá el PDF para imprimir o el Word editable. Gratis.">
+<meta name="theme-color" content="#0f3d5e">
+<link rel="canonical" href="__SITE_URL__/app/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Carta Documento Fácil">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Editor de carta documento">
+<meta property="og:description" content="Escribí tu carta documento sobre el formulario del Correo Argentino, calibrá tu impresora y descargá el PDF para imprimir o el Word editable. Gratis.">
+<meta property="og:url" content="__SITE_URL__/app/">
+<meta property="og:image" content="__SITE_URL__/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carta Documento Fácil: completá tu carta documento e imprimila sobre el formulario del Correo Argentino">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Editor de carta documento">
+<meta name="twitter:description" content="Escribí tu carta documento sobre el formulario del Correo Argentino, calibrá tu impresora y descargá el PDF para imprimir o el Word editable. Gratis.">
+<meta name="twitter:image" content="__SITE_URL__/og-image.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Carta Documento">
+<link rel="stylesheet" href="/app/app.css">
+<style id="pagecss">@page { size: 215.9mm 355.6mm; margin: 0; }</style>
+</head>
+<body>
+<div class="app">
+    <main class="stage" id="stage">
+    <noscript><p style="padding:16px;max-width:640px;margin:0 auto">Esta herramienta necesita JavaScript para funcionar. Mientras tanto, podés leer la <a href="/guia/como-completar-carta-documento/">guía para completar una carta documento</a>.</p></noscript>
+    <div class="toolbar">
+      <span>✎ Hacé clic en un casillero de la carta para escribir</span>
+      <label class="check"><input type="checkbox" id="hotShow"> Marcar casilleros</label>
+      <label class="check"><input type="checkbox" id="bgShow"> Formulario de fondo</label>
+    </div>
+    <div class="zoomer" id="zoomer"><div class="paper guides" id="paperEl"></div></div>
+  </main>
+
+  <aside class="panel" aria-label="Datos de la carta">
+    <a class="home" href="/">← Inicio</a>
+    <h1>Carta Documento Fácil</h1>
+    <p class="sub">Escribí directamente sobre la carta o completá los datos acá abajo.</p>
+
+    <div class="actions">
+      <button class="primary" id="btnPdf" type="button">Descargar PDF para imprimir</button>
+      <div class="btns">
+        <button type="button" id="btnPrint">Imprimir desde el navegador</button>
+        <button type="button" id="btnDocx">Descargar Word (.docx)</button>
+      </div>
+      <p class="note" id="printNote">Para imprimir sobre el formulario: abrí el PDF y elegí papel Legal, escala 100 %, sin márgenes.</p>
+      <p class="note" id="fitWarn" role="alert" hidden style="color:var(--guide);font-weight:600"></p>
+      <p class="note" id="expNote" role="status" aria-live="polite"></p>
+      <div class="banner slim" id="firstRun" hidden>
+        <b>Primera vez:</b> antes de imprimir, calibrá tu impresora (al final de esta página, unos 2 minutos).
+        <div class="btns">
+          <button type="button" id="btnFirstGo" class="primary" style="width:auto">Ir a calibrar</button>
+          <button type="button" id="btnFirstSkip">Omitir</button>
+        </div>
+      </div>
+    </div>
+
+    <h2>Remitente</h2>
+    <div class="row"><label for="rNombre">Nombre</label><input type="text" id="rNombre"></div>
+    <div class="row"><label for="rDom">Domicilio</label><input type="text" id="rDom"></div>
+    <div class="row three">
+      <div><label for="rCP">CP</label><input type="text" id="rCP"></div>
+      <div><label for="rLoc">Localidad</label><input type="text" id="rLoc"></div>
+      <div><label for="rProv">Provincia</label><input type="text" id="rProv"></div>
+    </div>
+
+    <h2>Destinatario</h2>
+    <div class="row"><label for="dNombre">Nombre</label><input type="text" id="dNombre"></div>
+    <div class="row"><label for="dDom">Domicilio</label><input type="text" id="dDom"></div>
+    <div class="row three">
+      <div><label for="dCP">CP</label><input type="text" id="dCP"></div>
+      <div><label for="dLoc">Localidad</label><input type="text" id="dLoc"></div>
+      <div><label for="dProv">Provincia</label><input type="text" id="dProv"></div>
+    </div>
+
+    <h2>Texto</h2>
+    <div class="row"><label for="cuerpo">Cuerpo de la carta</label><textarea id="cuerpo" rows="9"></textarea></div>
+    <div class="ads">
+      <p class="ad-tag">Publicidad</p>
+      <div class="adcard">
+        <div class="adlogo"><svg class="logo-diez" width="240" height="60" viewBox="0 0 800 200" role="img" aria-label="Diez, Basanta, Sar Diez y Asoc. Estudio jurídico"><g transform="translate(0 42)"><rect x="6" y="6" width="108" height="12" fill="#123b36"/><rect x="18" y="26" width="20" height="66" fill="#123b36"/><rect x="50" y="26" width="20" height="66" fill="#b8893a"/><rect x="82" y="26" width="20" height="66" fill="#123b36"/><rect x="6" y="100" width="108" height="7" fill="#123b36"/><rect x="0" y="110" width="120" height="6" fill="#123b36"/></g><text x="150" y="92" font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif" font-weight="600" font-size="34" fill="#123b36" textLength="600" lengthAdjust="spacing">DIEZ · BASANTA · SAR DIEZ</text><rect x="150" y="106" width="600" height="2" fill="#b8893a"/><text x="150" y="142" font-family="Montserrat, Arial, Helvetica, sans-serif" font-weight="600" font-size="26" fill="#123b36" textLength="150" lengthAdjust="spacing">&amp; ASOC.</text></svg></div>
+        <b>Derecho comercial y laboral</b>
+        <span>Lavalle 1506, Piso 9° Of. “34”, C.A.B.A.</span>
+        <span class="adlinks"><a href="tel:+541143711548">(011) 4371-1548</a> · <a href="https://wa.me/5491168703785?text=Hola%2C%20te%20escribo%20desde%20Carta%20Documento%20F%C3%A1cil." target="_blank" rel="noopener sponsored">WhatsApp</a></span>
+      </div>
+      <p class="adnote">Publicidad. El estudio es responsable de sus servicios.</p>
+    </div>
+    
+    <div class="row"><label for="dom">Domicilio constituido</label><textarea id="dom" rows="3"></textarea></div>
+    <div class="row"><label for="cierre">Cierre</label><input type="text" id="cierre"></div>
+
+    <h2>Firma</h2>
+    <div class="row"><label for="fNombre">Nombre</label><input type="text" id="fNombre"></div>
+    <div class="row two">
+      <div><label for="fDni">DNI</label><input type="text" id="fDni"></div>
+      <div><label for="fCuit">CUIT</label><input type="text" id="fCuit"></div>
+    </div>
+
+    <details id="cartasBox" class="sect">
+      <summary>Mis cartas guardadas</summary>
+      
+    <div class="row"><label for="draftName">Nombre para guardar esta carta</label><input type="text" id="draftName" placeholder="Ej.: Intimación Pérez, marzo"></div>
+    <div class="btns" style="margin-top:0">
+      <button type="button" id="btnDraftSave">Guardar</button>
+      <button type="button" id="btnDraftNew">Carta nueva</button>
+      <button type="button" id="btnExample">Ver un ejemplo</button>
+    </div>
+    <div class="row" style="margin-top:10px"><label for="draftSel">Cartas guardadas en este dispositivo</label>
+      <select id="draftSel"><option value="">(ninguna todavía)</option></select>
+    </div>
+    <div class="btns" style="margin-top:0">
+      <button type="button" id="btnDraftOpen">Abrir</button>
+      <button type="button" id="btnDraftDel">Eliminar</button>
+      <button type="button" id="btnDraftExp">Exportar todo</button>
+      <button type="button" id="btnDraftImp">Importar</button>
+    </div>
+    <input type="file" id="draftFile" accept="application/json,.json" hidden>
+    <p class="note" id="draftNote" role="status" aria-live="polite">Tus datos se guardan solo en este dispositivo. No se envían a ningún servidor.</p>
+
+    
+    </details>
+
+    <details id="calibSection" class="sect">
+      <summary>Calibrar tu impresora (una sola vez)</summary>
+      <p class="note">Cada impresora corre el papel un poquito distinto. Con la calibración, cada dato cae en su casillero. Se hace una sola vez por impresora.</p>
+      <div class="btns"><button type="button" id="btnCalib">Imprimir página de calibración (PDF)</button></div>
+      <details id="photoBox">
+      <summary>Calibrar con una foto</summary>
+      <p class="note">1) Imprimí la página de calibración sobre el formulario real. 2) Sacale una foto plana, con las cuatro cruces de las esquinas a la vista y la hoja entera. 3) Subila acá: la herramienta mide los desvíos y te propone la calibración.</p>
+      <div class="btns">
+        <button type="button" id="btnShoot">Sacar foto</button>
+        <button type="button" id="btnUpload">Subir imagen</button>
+      </div>
+      <input type="file" id="photoCam" accept="image/*" capture="environment" hidden>
+      <input type="file" id="photoUp" accept="image/*" hidden>
+      <p class="note" id="photoNote" role="status" aria-live="polite"></p>
+      <canvas id="photoPrev" hidden style="width:100%;border:1px solid var(--line);border-radius:6px;margin-top:6px"></canvas>
+      <div id="photoRes" hidden>
+        <div class="ftable" id="photoTable"></div>
+        <div class="btns">
+          <button type="button" id="btnApplyPhoto" class="primary">Aplicar y fijar calibración</button>
+          <button type="button" id="btnDiscardPhoto">Descartar</button>
+        </div>
+      </div>
+    </details>
+
+      <div id="lockedBox" hidden>
+      <h2>Calibración</h2>
+      <p class="note">Calibración fijada: los casilleros salen en las posiciones ya ajustadas.</p>
+      <div class="btns"><button type="button" id="btnUnlock">Editar calibración</button></div>
+    </div>
+
+    
+      <div id="calibBox">
+      <h2>Calibración</h2>
+      <div class="row"><label for="paper">Tamaño de papel</label>
+        <select id="paper">
+          <option value="legal">Legal / Oficio (215,9 × 355,6 mm)</option>
+          <option value="oficio">Oficio argentino (216 × 330 mm)</option>
+          <option value="a4">A4 (210 × 297 mm)</option>
+        </select>
+      </div>
+      <label class="check"><input type="checkbox" id="gShow"> Mostrar guías, regla y marcas de esquina</label>
+      <label class="check"><input type="checkbox" id="gPrint"> Imprimir también las guías</label>
+      <label class="check"><input type="checkbox" id="gOnly"> Solo guías, sin texto (hoja de prueba)</label>
+
+      <p class="note">Los valores son milímetros. Positivo mueve a la derecha (X) o hacia abajo (Y); negativo, a la izquierda o hacia arriba.</p>
+      <div class="ftable" id="grpTable"></div>
+
+      <details>
+        <summary>Tipo de letra, tamaño e interlineado</summary>
+        <div class="row" style="margin-top:6px"><label for="fFamily">Tipo de letra</label>
+          <select id="fFamily">
+            <option value="times">Times New Roman</option>
+            <option value="arial">Arial</option>
+            <option value="courier">Courier New</option>
+          </select>
+        </div>
+        <div class="row two">
+          <div><label for="fH">Nombre y domicilio (pt)</label><input type="number" id="fH" step="0.5" min="6" max="18"></div>
+          <div><label for="fC">CP, localidad, prov. (pt)</label><input type="number" id="fC" step="0.5" min="5" max="16"></div>
+        </div>
+        <div class="row three">
+          <div><label for="bSize">Cuerpo (pt)</label><input type="number" id="bSize" step="0.1" min="6" max="16"></div>
+          <div><label for="bLh">Interlineado (pt)</label><input type="number" id="bLh" step="0.05" min="6" max="24"></div>
+          <div><label for="bW">Ancho (mm)</label><input type="number" id="bW" step="0.5" min="60" max="210"></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Ajuste fino por campo</summary>
+        <div class="ftable" id="fldTable"></div>
+      </details>
+
+      <details>
+        <summary>Guardar o pegar calibración</summary>
+        <p class="note">Se guarda sola en este navegador. Copiá este texto para pasármelo, o pegá acá una calibración que te di y tocá “Aplicar”.</p>
+        <textarea id="cfg" spellcheck="false"></textarea>
+        <div class="btns"><button type="button" id="btnApply">Aplicar calibración pegada</button></div>
+        <p class="note" id="cfgNote" role="status" aria-live="polite"></p>
+      </details>
+
+      <div class="btns">
+        <button type="button" id="btnLock" class="primary">Fijar calibración</button>
+        <button type="button" id="btnReset">Restablecer</button>
+      </div>
+      <p class="note">Al fijarla se ocultan estos ajustes y queda solo lo necesario para completar e imprimir. Podés volver a editarla cuando quieras.</p>
+    </div>
+    
+    </details>
+
+    <p class="legal">Herramienta de ayuda para completar e imprimir el formulario. No brinda asesoramiento legal ni revisa el contenido de la carta: consultá con un abogado. No está afiliada al Correo Argentino. <a href="/guia/como-completar-carta-documento/">Guía paso a paso</a> · <a href="/privacidad/">Privacidad</a></p>
+  </aside>
+
+</div>
+
+<script src="/app/app.js"></script>
+<script src="/analytics.js" defer></script>
+</body>
+</html>

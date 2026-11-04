@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-label="Diez, Basanta, Sar Diez y Asoc. Estudio jurídico">
+<title>Diez, Basanta, Sar Diez y Asoc. Estudio jurídico</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;family=Montserrat:wght@500;600&amp;display=swap');</style>
+
+<g transform="translate(0 42)"><rect x="6" y="6" width="108" height="12" fill="#123b36"/>
+<rect x="18" y="26" width="20" height="66" fill="#123b36"/>
+<rect x="50" y="26" width="20" height="66" fill="#b8893a"/>
+<rect x="82" y="26" width="20" height="66" fill="#123b36"/>
+<rect x="6" y="100" width="108" height="7" fill="#123b36"/>
+<rect x="0" y="110" width="120" height="6" fill="#123b36"/></g>
+<text x="150" y="92" font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif" font-weight="600" font-size="34" fill="#123b36" textLength="600" lengthAdjust="spacing">DIEZ · BASANTA · SAR DIEZ</text>
+<rect x="150" y="106" width="600" height="2" fill="#b8893a"/>
+<text x="150" y="136" font-family="Montserrat, Arial, Helvetica, sans-serif" font-weight="600" font-size="14" fill="#123b36" textLength="90" lengthAdjust="spacing">&amp; ASOC.</text>
+<text x="750" y="136" text-anchor="end" font-family="Montserrat, Arial, Helvetica, sans-serif" font-weight="500" font-size="12" fill="#5b6470" textLength="330" lengthAdjust="spacing">DERECHO COMERCIAL Y LABORAL</text>
+</svg>

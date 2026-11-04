@@ -1,0 +1,10 @@
+{
+  "name": "carta-documento-facil",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Completá e imprimí tu carta documento sobre el formulario del Correo Argentino.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/build.mjs && python3 -m http.server 8080 -d dist"
+  }
+}

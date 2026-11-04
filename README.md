@@ -42,11 +42,13 @@ Si guardás un cambio en una **rama nueva** (la opción “Create a new branch�
 | Textos de la carátula (inicio) | `src/index.html` |
 | Publicidad del estudio en la carátula | `src/index.html`, sección `id="estudios"` |
 | Publicidad en la aplicación (panel) | `src/app/index.html`, bloque `class="ads"` |
+| Publicidad en la guía general | `src/guia/carta-documento/index.html`, sección `id="abogado"` |
 | Publicidad sobre la carta (franja punteada) | `src/app/app.js`, buscar `adStrip` |
 | Aspecto de la aplicación (colores, tamaños) | `src/app/app.css` |
 | Funcionamiento de la aplicación | `src/app/app.js` |
 | Política de privacidad | `src/privacidad/index.html` |
 | Guía “Cómo completar una carta documento” | `src/guia/como-completar-carta-documento/index.html` |
+| Guía general “Carta documento: qué es, cómo se envía…” | `src/guia/carta-documento/index.html` |
 | Preguntas frecuentes | `src/index.html`, sección `id="preguntas"` |
 | Título y descripción que muestra Google | La cabecera (`<title>` y `<meta name="description">`) de cada página |
 | Imagen al compartir por WhatsApp o redes | `src/og-image.png` (1200 × 630 px) |
@@ -82,6 +84,6 @@ Abrí http://localhost:8080 en el navegador.
 ## Cosas para tener presentes
 
 - **Privacidad:** no guardes en este repositorio datos de clientes ni cartas reales. La aplicación no los necesita.
-- **Publicidad:** cada estudio es responsable de sus servicios. Si cambia el estudio anunciante, hay que actualizar los tres lugares de la tabla.
+- **Publicidad:** cada estudio es responsable de sus servicios. Si cambia el estudio anunciante, hay que actualizar los cuatro lugares de la tabla.
 - **Formulario compatible:** las posiciones están medidas para el formulario preimpreso del Correo Argentino con las dos secciones (“A.R. – Carta documento” y “Carta documento”), en papel Legal. Otros modelos requieren nuevas mediciones.
 - **No es asesoramiento legal.** Es una herramienta de ayuda para completar e imprimir.

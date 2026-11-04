@@ -48,8 +48,20 @@ ol.pasos > li { margin-bottom: 14px; }
 .cta:focus-visible { outline: 3px solid #e8a826; outline-offset: 2px; }
 nav.crumbs { font-size: 15px; color: var(--muted); }
 nav.crumbs a { text-decoration: none; }
+.quick { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; }
+.quick .cta { margin-top: 0; }
+.hint { border-left: 3px solid #e8a826; padding: 2px 0 2px 14px; margin: 8px 0 0; }
 </style>
 <script type="application/ld+json">
+[
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "__SITE_URL__/" },
+  { "@type": "ListItem", "position": 2, "name": "Cómo completar una carta documento", "item": "__SITE_URL__/guia/como-completar-carta-documento/" }
+ ]
+},
 {
  "@context": "https://schema.org",
  "@type": "Article",
@@ -60,15 +72,10 @@ nav.crumbs a { text-decoration: none; }
  "dateModified": "__LASTMOD__",
  "mainEntityOfPage": "__SITE_URL__/guia/como-completar-carta-documento/",
  "image": "__SITE_URL__/og-image.png",
- "author": {
-  "@type": "Organization",
-  "name": "Carta Documento Fácil"
- },
- "publisher": {
-  "@type": "Organization",
-  "name": "Carta Documento Fácil"
- }
+ "author": { "@type": "Organization", "name": "Carta Documento Fácil", "url": "__SITE_URL__/" },
+ "publisher": { "@type": "Organization", "name": "Carta Documento Fácil", "url": "__SITE_URL__/", "logo": { "@type": "ImageObject", "url": "__SITE_URL__/icon-512.png" } }
 }
+]
 </script>
 </head>
 <body>
@@ -76,6 +83,7 @@ nav.crumbs a { text-decoration: none; }
   <nav class="crumbs" aria-label="Ubicación"><a href="/">Inicio</a> › Guía</nav>
   <h1>Cómo completar una carta documento, paso a paso</h1>
   <p>La carta documento es una comunicación escrita que el Correo Argentino entrega con constancia de recepción. Esta guía explica cómo completar cada parte del formulario preimpreso para que llegue bien y se entienda. No reemplaza el consejo de un abogado: si hay plazos o derechos en juego, consultá antes de enviarla.</p>
+  <p class="quick">¿Ya tenés todo listo? <a class="cta" href="/app/">Completar mi carta documento</a> <span class="fine">Gratis y sin registrarte.</span></p>
 
   <h2>Antes de empezar</h2>
   <ul>
@@ -88,7 +96,8 @@ nav.crumbs a { text-decoration: none; }
   <ol class="pasos">
     <li><b>Remitente.</b> Tu nombre y apellido (o la razón social) y tu domicilio, con código postal, localidad y provincia. El formulario tiene dos secciones (“A.R. – Carta documento” y “Carta documento”) y los datos van en las dos.</li>
     <li><b>Destinatario.</b> El nombre o la razón social exacta y el domicilio donde tiene que recibirla. Revisalo bien: un error en la dirección puede hacer que la carta no llegue.</li>
-    <li><b>Texto de la carta.</b> Contá los hechos en pocas líneas, decí concretamente qué pedís, en qué plazo y qué vas a hacer si no se cumple. Escribí con letra clara o impreso, sin tachaduras, y dejá el texto dentro de la zona destinada al cuerpo.</li>
+    <li><b>Texto de la carta.</b> Contá los hechos en pocas líneas, decí concretamente qué pedís, en qué plazo y qué vas a hacer si no se cumple. Escribí con letra clara o impreso, sin tachaduras, y dejá el texto dentro de la zona destinada al cuerpo.
+      <p class="hint">Es la parte más delicada: lo que escribas después puede usarse como prueba. Si dudás sobre qué pedir o qué plazo dar, <a href="/guia/carta-documento/#abogado">un abogado puede revisarlo</a> antes de que la mandes.</p></li>
     <li><b>Domicilio constituido (opcional).</b> Es el domicilio donde querés recibir las respuestas o notificaciones, por ejemplo el de tu abogado. Si lo incluís, aclaralo al final del texto.</li>
     <li><b>Firma.</b> Tu nombre, DNI y, si querés, CUIT. Firmá a mano sobre el formulario.</li>
     <li><b>Revisar y despachar.</b> Releé todo, llevá el formulario al Correo Argentino y conservá la constancia que te entreguen.</li>
@@ -98,8 +107,25 @@ nav.crumbs a { text-decoration: none; }
   <p>Con Carta Documento Fácil escribís sobre una vista del formulario, calibrás tu impresora una vez y descargás el PDF listo para imprimir, con cada dato en su casillero. Es gratis y lo que escribís queda solo en tu dispositivo.</p>
   <a class="cta" href="/app/">Completar mi carta documento</a>
 
+  <h2>Para que se imprima sin errores</h2>
+  <ul>
+    <li>Usá papel Legal (no A4) e imprimí a escala 100 %, sin “Ajustar a la página”.</li>
+    <li>Calibrá la impresora una vez con la hoja de prueba: cada impresora corre el papel unos milímetros distinto.</li>
+    <li>Revisá que el texto no se salga del recuadro del cuerpo y que los datos estén en las dos secciones.</li>
+  </ul>
+  <p>Hay más errores frecuentes en <a href="/guia/carta-documento/#errores">errores comunes al completar e imprimir</a>.</p>
+
+  <h2>Después de enviarla</h2>
+  <p>Guardá la constancia que te dan en el Correo: tiene el número para seguir el envío y saber cuándo se entregó. Conservá también tu copia de la carta. Si te responden con otra carta documento, en <a href="/guia/carta-documento/#recibi">qué hacer si recibiste una</a> te contamos los primeros pasos.</p>
+
   <h2>¿Y la carta documento online?</h2>
   <p>El Correo Argentino también ofrece un servicio para redactar, enviar y pagar la carta documento por internet. Esta guía y la herramienta son para quienes usan el formulario impreso.</p>
+
+  <h2>Seguí leyendo</h2>
+  <ul>
+    <li><a href="/guia/carta-documento/">Carta documento: qué es, cómo se envía y qué hacer si te llega</a></li>
+    <li><a href="/guia/carta-documento/#diferencias">Diferencias con el telegrama laboral y la carta certificada</a></li>
+  </ul>
 
   <p class="fine" style="margin-top:28px">Esta guía es informativa y no constituye asesoramiento legal. Carta Documento Fácil no está afiliada al Correo Argentino. <a href="/privacidad/">Privacidad</a></p>
 </main>

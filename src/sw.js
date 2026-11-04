@@ -1,7 +1,7 @@
 // Service worker: guarda la aplicación para que abra y funcione sin conexión.
 // La versión cambia sola en cada publicación (ver scripts/build.mjs), así todos reciben la actualización.
 var VERSION = 'cdf-__BUILD__';   // la reemplaza scripts/build.mjs con el código de cada publicación
-var ARCHIVOS = ['/', '/app/', '/privacidad/', '/guia/como-completar-carta-documento/', '/analytics.js', '/app/app.css', '/app/app.js', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/icon-maskable-512.png', '/apple-touch-icon.png'];
+var ARCHIVOS = ['/', '/app/', '/privacidad/', '/guia/como-completar-carta-documento/', '/guia/carta-documento/', '/analytics.js', '/app/app.css', '/app/app.js', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/icon-maskable-512.png', '/apple-touch-icon.png'];
 
 // Algunos hostings responden con redirecciones: una respuesta redirigida no se puede usar para abrir una página.
 function limpia(r) {

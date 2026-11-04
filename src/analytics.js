@@ -77,7 +77,7 @@
 
   /* ---------- eventos (solo el nombre de la acción, sin texto ni datos personales) ---------- */
   var BY_ID = { btnPdf: 'descargar_pdf', btnDocx: 'descargar_word', btnPrint: 'imprimir_navegador', btnCalib: 'hoja_calibracion',
-                btnApplyPhoto: 'calibracion_con_foto', btnExample: 'ver_ejemplo', btnDraftSave: 'guardar_carta', btnInstall: 'instalar_app' };
+                btnApplyPhoto: 'calibracion_con_foto', btnExample: 'ver_ejemplo', btnDraftSave: 'guardar_carta' };
   function where(el) { return el.closest('.adstrip') ? 'carta' : el.closest('.ads') ? 'panel' : el.closest('#estudios') ? 'sitio' : el.closest('#abogado') ? 'guia' : 'otro'; }
   // Además de clic_publicidad, cada contacto tiene su propio evento para usarlo como conversión (Analytics y Google Ads).
   function contacto(tipo, nombre, el) { var u = where(el); track('clic_publicidad', { tipo: tipo, ubicacion: u }); track(nombre, { ubicacion: u }); }
@@ -89,7 +89,6 @@
     else if (/wa\.me/.test(href)) contacto('whatsapp', 'contacto_whatsapp', el);
     else if (href === '/app/') track('abrir_aplicacion');
   }, true);
-  window.addEventListener('appinstalled', function () { track('app_instalada'); });
 
   /* ---------- arranque ---------- */
   function start() {

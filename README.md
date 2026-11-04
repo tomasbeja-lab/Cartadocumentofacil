@@ -1,6 +1,6 @@
 # Carta Documento Fácil
 
-Aplicación web para completar e imprimir una carta documento sobre el formulario preimpreso del Correo Argentino. Funciona en el navegador, se instala en el celular o la PC y no envía lo que escribís a ningún servidor.
+Aplicación web para completar e imprimir una carta documento sobre el formulario preimpreso del Correo Argentino. Funciona en el navegador (solo online, sin descargar nada) y no envía lo que escribís a ningún servidor.
 
 No tiene base de datos ni servidor propio: son archivos estáticos (HTML, CSS y JavaScript).
 
@@ -23,7 +23,6 @@ Configuración en GitHub (Settings → Secrets and variables → Actions):
 
 El comando de armado (`scripts/build.mjs`) copia `src/` a `dist/` y completa dos datos solos:
 
-- **Versión del modo sin conexión:** cambia con cada publicación, así los celulares con la aplicación instalada reciben siempre la última versión. Ya no hay que acordarse de subir ningún número.
 - **Google Analytics:** si definís la variable `GA_ID`, se carga en `analytics.js`. Si no la definís, queda desactivado.
 - **Dirección del sitio:** con `SITE_URL` completa los enlaces canónicos, el mapa del sitio (`sitemap.xml`), `robots.txt` y la imagen que se ve al compartir. Si no la definís, los enlaces quedan apuntando a `localhost`: no la borres.
 
@@ -54,7 +53,7 @@ Si guardás un cambio en una **rama nueva** (la opción “Create a new branch�
 | Imagen al compartir por WhatsApp o redes | `src/og-image.png` (1200 × 630 px) |
 | Páginas que se informan a Google | `src/sitemap.xml` (si agregás una página nueva, sumala acá) |
 | Google Analytics (eventos, aviso de consentimiento) | `src/analytics.js` |
-| Ícono, nombre y colores al instalar la aplicación | `src/manifest.webmanifest` y los `.png` de `src/` |
+| Íconos | los `.png` de `src/` |
 | Cabeceras y caché del hosting | `src/_headers` |
 | Página de “no encontrada” | `src/404.html` |
 | Logos y archivos de marca del estudio | `brand/` (no se publican) |

@@ -22,7 +22,6 @@
 <meta name="twitter:title" content="Tu carta documento, en el casillero justo">
 <meta name="twitter:description" content="Completá tu carta documento gratis, sin registrarte, e imprimila sobre el formulario del Correo Argentino con cada dato en su casillero. Descargá PDF o Word.">
 <meta name="twitter:image" content="__SITE_URL__/og-image.png">
-<link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
@@ -140,7 +139,7 @@ footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--m
    { "@type": "Question", "name": "¿Con qué formulario funciona?", "acceptedAnswer": { "@type": "Answer", "text": "Con el formulario preimpreso del Correo Argentino que tiene dos secciones, “A.R. – Carta documento” y “Carta documento”, en papel Legal (215,9 × 355,6 mm). Otros modelos pueden no coincidir." } },
    { "@type": "Question", "name": "¿Por qué hay que calibrar la impresora?", "acceptedAnswer": { "@type": "Answer", "text": "Cada impresora corre el papel unos milímetros distinto. La calibración se hace una sola vez: imprimís una hoja de prueba sobre un formulario, le sacás una foto y la aplicación corrige el desvío." } },
    { "@type": "Question", "name": "¿Dónde quedan mis datos?", "acceptedAnswer": { "@type": "Answer", "text": "Solo en tu dispositivo. Lo que escribís no se envía a ningún servidor. Si guardás cartas, quedan en el navegador que usaste." } },
-   { "@type": "Question", "name": "¿Puedo usarla desde el celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí: se completa e instala en el celular. Para imprimir, descargá el PDF y mandalo a una impresora en papel Legal y a escala 100 %." } },
+   { "@type": "Question", "name": "¿Puedo usarla desde el celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí: se completa desde el navegador del celular. Para imprimir, descargá el PDF y mandalo a una impresora en papel Legal y a escala 100 %." } },
    { "@type": "Question", "name": "¿La herramienta me dice qué tengo que escribir?", "acceptedAnswer": { "@type": "Answer", "text": "No. Incluye un ejemplo para que veas cómo queda, pero no brinda asesoramiento legal. Si hay plazos o derechos en juego, consultá con un abogado." } },
    { "@type": "Question", "name": "¿Qué hago si recibí una carta documento?", "acceptedAnswer": { "@type": "Answer", "text": "Leela con atención, guardala con la constancia de entrega y anotá la fecha en que te llegó. Fijate si menciona un plazo o te pide algo concreto. Antes de responder, consultá con un abogado: qué contestar depende de tu situación." } },
    { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "La herramienta es gratis y no pide registrarte. El envío de la carta documento se paga en el Correo Argentino." } }
@@ -162,10 +161,8 @@ footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--m
       <p class="lead">Completá los datos, calibrá tu impresora una sola vez e imprimí sobre el formulario preimpreso del Correo Argentino. Cada dato queda en su lugar, sin que se corra nada.</p>
       <div class="cta">
         <a class="btn primary" href="/app/">Abrir la aplicación</a>
-        <button class="btn" id="btnInstall" type="button" hidden>Instalar en este dispositivo</button>
-        <a class="btn" id="linkInstall" href="#instalar">Cómo instalarla</a>
       </div>
-      <p class="fine">Gratis, sin cuenta y sin conexión. Tus datos no salen de tu dispositivo.</p>
+      <p class="fine">Gratis y sin cuenta. Tus datos no salen de tu dispositivo.</p>
     </div>
     <div class="sheet" aria-hidden="true">
       <svg viewBox="0 0 320 380" role="img" aria-label="">
@@ -214,7 +211,7 @@ footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--m
       <li><b>Calibración con una foto</b><span>Sin reglas ni cuentas: la aplicación corrige el corrimiento de tu impresora.</span></li>
       <li><b>PDF y Word</b><span>El PDF mantiene las posiciones exactas. El Word te deja editar cada casillero.</span></li>
       <li><b>Tus cartas guardadas</b><span>Guardá modelos, volvé a abrirlos y hacé copias de seguridad.</span></li>
-      <li><b>Funciona sin conexión</b><span>Una vez abierta, anda en el celular o la PC aunque no haya internet.</span></li>
+      <li><b>Sin descargar nada</b><span>Se usa desde el navegador, en el celular o en la PC.</span></li>
       <li><b>Privada</b><span>Todo se procesa en tu dispositivo. No hay cuentas ni servidores con tus datos.</span></li>
     </ul>
   </section>
@@ -228,20 +225,10 @@ footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--m
       <details><summary>¿Con qué formulario funciona?</summary><p>Con el formulario preimpreso del Correo Argentino que tiene dos secciones, “A.R. – Carta documento” y “Carta documento”, en papel Legal (215,9 × 355,6 mm). Otros modelos pueden no coincidir.</p></details>
       <details><summary>¿Por qué hay que calibrar la impresora?</summary><p>Cada impresora corre el papel unos milímetros distinto. La calibración se hace una sola vez: imprimís una hoja de prueba sobre un formulario, le sacás una foto y la aplicación corrige el desvío.</p></details>
       <details><summary>¿Dónde quedan mis datos?</summary><p>Solo en tu dispositivo. Lo que escribís no se envía a ningún servidor. Si guardás cartas, quedan en el navegador que usaste.</p></details>
-      <details><summary>¿Puedo usarla desde el celular?</summary><p>Sí: se completa e instala en el celular. Para imprimir, descargá el PDF y mandalo a una impresora en papel Legal y a escala 100 %.</p></details>
+      <details><summary>¿Puedo usarla desde el celular?</summary><p>Sí: se completa desde el navegador del celular. Para imprimir, descargá el PDF y mandalo a una impresora en papel Legal y a escala 100 %.</p></details>
       <details><summary>¿La herramienta me dice qué tengo que escribir?</summary><p>No. Incluye un ejemplo para que veas cómo queda, pero no brinda asesoramiento legal. Si hay plazos o derechos en juego, <a href="#estudios">consultá con un abogado</a>.</p></details>
       <details><summary>¿Qué hago si recibí una carta documento?</summary><p>Leela con atención, guardala con la constancia de entrega y anotá la fecha en que te llegó. Fijate si menciona un plazo o te pide algo concreto. Antes de responder, <a href="#estudios">consultá con un abogado</a>: qué contestar depende de tu situación. Más detalles en <a href="/guia/carta-documento/#recibi">si recibiste una carta documento</a>.</p></details>
       <details><summary>¿Cuánto cuesta?</summary><p>La herramienta es gratis y no pide registrarte. El envío de la carta documento se paga en el Correo Argentino.</p></details>
-    </div>
-  </section>
-
-  <section id="instalar">
-    <h2>Instalala como aplicación</h2>
-    <div class="cols">
-      <div class="card"><h3>Android y computadora</h3>
-        <p>Abrí la aplicación en Chrome o Edge y tocá <b>Instalar</b> (el ícono en la barra de direcciones o el botón de esta página). Queda con su ícono, como cualquier otra aplicación.</p></div>
-      <div class="card"><h3>iPhone y iPad</h3>
-        <ol><li>Abrí esta página en <b>Safari</b>.</li><li>Tocá el botón <b>Compartir</b>.</li><li>Elegí <b>Agregar a inicio</b>.</li></ol></div>
     </div>
   </section>
 
@@ -277,19 +264,8 @@ footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--m
 </div>
 
 <script>
-(function () {
-  var evento = null, btn = document.getElementById('btnInstall'), link = document.getElementById('linkInstall');
-  window.addEventListener('beforeinstallprompt', function (e) {
-    e.preventDefault(); evento = e; btn.hidden = false; link.hidden = true;
-  });
-  btn.addEventListener('click', function () {
-    if (!evento) return;
-    evento.prompt();
-    evento.userChoice.then(function () { evento = null; btn.hidden = true; link.hidden = false; });
-  });
-  window.addEventListener('appinstalled', function () { btn.hidden = true; link.hidden = true; });
-  if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {}); });
-})();
+// El sitio es solo online: si quedó instalado el modo sin conexión de antes, se da de baja.
+if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); });
 </script>
 <script src="/analytics.js" defer></script>
 </body>

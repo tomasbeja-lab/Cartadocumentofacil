@@ -1,13 +1,12 @@
 # Carta Documento Fácil: contexto para Claude Code
 
-Sitio estático (sin framework ni dependencias) para completar una carta documento e imprimirla sobre el formulario preimpreso del Correo Argentino. Es una PWA instalable que funciona sin conexión. Público: abogados, estudios y personas en Argentina.
+Sitio estático (sin framework ni dependencias) para completar una carta documento e imprimirla sobre el formulario preimpreso del Correo Argentino. Es **solo online**: no se instala ni funciona sin conexión (decisión del dueño, para que no se pueda descargar y copiar fácil). No volver a agregar manifest, botón de instalar ni caché del service worker. Público: abogados, estudios y personas en Argentina.
 
 ## Comandos
 
 - `npm run build`: arma `dist/` desde `src/` (script `scripts/build.mjs`, solo Node, sin librerías).
 - `npm run preview`: arma y sirve en http://localhost:8080 (requiere Python 3).
 - Variables de armado: `SITE_URL` (dominio, para canónicos/sitemap/OG; si falta usa la dirección de Cloudflare o localhost), `GA_ID` (Google Analytics, opcional; se valida que empiece con `G-`).
-- La versión del service worker (`__BUILD__` en `src/sw.js`) se completa sola con `CF_PAGES_COMMIT_SHA` o `GITHUB_SHA`.
 
 ## Estructura
 
@@ -17,7 +16,7 @@ Sitio estático (sin framework ni dependencias) para completar una carta documen
 - `src/guia/carta-documento/`: guía general para SEO (qué es, diferencias, cómo se envía, errores comunes, si recibiste una). Incluye un aviso del estudio en `id="abogado"`.
 - `src/privacidad/`: política de privacidad (se muestra la parte de Google Analytics solo si hay `GA_ID`).
 - `src/analytics.js`: Google Analytics con consentimiento previo; respeta Global Privacy Control y "No rastrear".
-- `src/sw.js`: modo sin conexión. **Si agregás archivos o páginas, sumalos a `ARCHIVOS`.**
+- `src/sw.js`: desinstalador del viejo modo sin conexión (borra la caché y se da de baja en los dispositivos que lo tenían). Dejarlo publicado con `Cache-Control: no-cache`.
 - `src/sitemap.xml`: **si agregás una página, sumala acá.**
 - `brand/`: logos del estudio anunciante (no se publican).
 
@@ -41,5 +40,4 @@ Probar con `npm run preview`:
 - La carátula carga y "Abrir la aplicación" lleva a `/app/`.
 - En la aplicación: escribir sobre la carta (clic en un casillero), "Ver un ejemplo" (en "Mis cartas guardadas"), "Descargar PDF para imprimir" y "Descargar Word" funcionan, y la firma queda debajo del texto.
 - "Imprimir página de calibración (PDF)" descarga la hoja con las cuatro cruces.
-- Sin conexión (después de una primera visita) abren `/`, `/app/` y la guía.
 - No hay errores en la consola del navegador.

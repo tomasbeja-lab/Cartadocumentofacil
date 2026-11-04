@@ -1165,7 +1165,8 @@
   Object.keys(PH).forEach(function (k) { var el = $(k); if (el) el.setAttribute('placeholder', PH[k]); });
   refreshDrafts();
 
-  if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () { /* sin modo sin conexión */ }); });
+  // La aplicación es solo online: si quedó instalado el modo sin conexión de antes, se da de baja.
+  if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); });
 
   window.addEventListener('resize', fit);
 

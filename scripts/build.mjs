@@ -1,5 +1,4 @@
-// Arma la carpeta "dist" que se publica: copia "src" y completa dos datos automáticos.
-//   - La versión del service worker (para que los celulares reciban cada actualización).
+// Arma la carpeta "dist" que se publica: copia "src" y completa datos automáticos.
 //   - El ID de Google Analytics, si está definido como variable de entorno GA_ID (opcional).
 //   - La dirección del sitio (variable SITE_URL, por ejemplo https://cartadocumentofacil.com.ar) para el SEO:
 //     enlaces canónicos, mapa del sitio y vista previa al compartir.
@@ -14,12 +13,7 @@ rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 cpSync(SRC, OUT, { recursive: true });
 
-// 1) Versión del service worker = código de la publicación (o la hora, si se arma en tu computadora).
-const build = (process.env.CF_PAGES_COMMIT_SHA || process.env.GITHUB_SHA || String(Date.now())).slice(0, 8);
-const swPath = join(OUT, 'sw.js');
-writeFileSync(swPath, readFileSync(swPath, 'utf8').replaceAll('__BUILD__', build));
-
-// 2) ID de Google Analytics (opcional). Si no está definido, el script queda desactivado.
+// 1) ID de Google Analytics (opcional). Si no está definido, el script queda desactivado.
 const ga = (process.env.GA_ID || '').trim();
 if (ga) {
   if (!/^G-[A-Z0-9]{6,}$/.test(ga)) throw new Error(`GA_ID no parece un ID de medición válido (debe empezar con "G-"): ${ga}`);
@@ -30,7 +24,7 @@ if (ga) {
 }
 
 
-// 3) Dirección del sitio para el SEO (canónicos, sitemap, imagen al compartir) y fecha de actualización.
+// 2) Dirección del sitio para el SEO (canónicos, sitemap, imagen al compartir) y fecha de actualización.
 function siteUrl() {
   let u = (process.env.SITE_URL || '').trim();
   if (u && !/^https?:\/\/[^/\s]+/.test(u)) throw new Error(`SITE_URL debe empezar con https:// (ej.: https://cartadocumentofacil.com.ar): ${u}`);
@@ -57,4 +51,4 @@ function walk(dir) {
 walk(OUT);
 if (!process.env.SITE_URL) console.warn(`Aviso: SITE_URL no está definida; se usa ${SITE}. Definila en Cloudflare cuando tengas el dominio.`);
 
-console.log(`Listo: carpeta "${OUT}" armada para ${SITE}. Versión ${build}${ga ? ` · Google Analytics ${ga}` : ' · Google Analytics desactivado'}.`);
+console.log(`Listo: carpeta "${OUT}" armada para ${SITE}${ga ? ` · Google Analytics ${ga}` : ' · Google Analytics desactivado'}.`);

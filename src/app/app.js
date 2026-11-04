@@ -248,6 +248,8 @@
               dNombre: 'Destinatario: nombre', dDom: 'Domicilio', dCP: 'CP', dLoc: 'Localidad', dProv: 'Provincia',
               cuerpo: 'Escribí acá el texto de la carta…', dom: 'Domicilio constituido (opcional)', cierre: 'Cierre (opcional)', fNombre: 'Firma: nombre', fDni: 'DNI N° …', fCuit: 'CUIT N° …' };
   var BODY_BINDS = { cuerpo: 1, dom: 1, cierre: 1, fNombre: 1, fDni: 1, fCuit: 1 };
+  // Corrector ortográfico del navegador solo en el texto libre: en nombres, números y domicilios marcaría todo.
+  var SPELL_BINDS = { cuerpo: 1, cierre: 1 };
 
   function panelFocus(k) {
     var el = $(k); if (!el) return;
@@ -270,7 +272,7 @@
       node.addEventListener('click', function () { panelFocus(bind); });
       return;
     }
-    node.contentEditable = 'plaintext-only'; node.spellcheck = false;
+    node.contentEditable = 'plaintext-only'; node.spellcheck = !!SPELL_BINDS[bind];
     node.setAttribute('role', 'textbox'); node.setAttribute('aria-label', ph || bind);
     node.addEventListener('input', function () {
       var v = node.innerText.replace(/\u00a0/g, ' ');

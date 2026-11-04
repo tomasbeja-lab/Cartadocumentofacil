@@ -1,0 +1,37 @@
+# Publica el sitio en Cloudflare (Worker con archivos estáticos) en cada cambio en main.
+name: Publicar en Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 26
+
+      - name: Armar el sitio
+        run: npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          GA_ID: ${{ vars.GA_ID }}
+
+      - name: Publicar con Wrangler
+        run: npx --yes wrangler@4.157.0 deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -1,0 +1,15 @@
+// Publicación en Cloudflare: el sitio vive en el Worker "mute-disk-4b12" como archivos estáticos.
+// Lo usa GitHub Actions (.github/workflows/deploy.yml) con `wrangler deploy` después de `npm run build`.
+{
+	"$schema": "https://unpkg.com/wrangler@4.157.0/config-schema.json",
+	"name": "mute-disk-4b12",
+	"compatibility_date": "2026-11-01",
+	"assets": {
+		"directory": "./dist",
+		"not_found_handling": "404-page",
+		"html_handling": "auto-trailing-slash"
+	},
+	// El sitio se sirve solo desde el dominio propio (ya conectado al Worker en Cloudflare).
+	"workers_dev": false,
+	"preview_urls": false
+}

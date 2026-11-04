@@ -78,13 +78,15 @@
   /* ---------- eventos (solo el nombre de la acción, sin texto ni datos personales) ---------- */
   var BY_ID = { btnPdf: 'descargar_pdf', btnDocx: 'descargar_word', btnPrint: 'imprimir_navegador', btnCalib: 'hoja_calibracion',
                 btnApplyPhoto: 'calibracion_con_foto', btnExample: 'ver_ejemplo', btnDraftSave: 'guardar_carta', btnInstall: 'instalar_app' };
-  function where(el) { return el.closest('.adstrip') ? 'carta' : el.closest('.ads') ? 'panel' : el.closest('#estudios') ? 'sitio' : 'otro'; }
+  function where(el) { return el.closest('.adstrip') ? 'carta' : el.closest('.ads') ? 'panel' : el.closest('#estudios') ? 'sitio' : el.closest('#abogado') ? 'guia' : 'otro'; }
+  // Además de clic_publicidad, cada contacto tiene su propio evento para usarlo como conversión (Analytics y Google Ads).
+  function contacto(tipo, nombre, el) { var u = where(el); track('clic_publicidad', { tipo: tipo, ubicacion: u }); track(nombre, { ubicacion: u }); }
   document.addEventListener('click', function (e) {
     var el = e.target.closest && e.target.closest('button, a'); if (!el) return;
     if (el.id && BY_ID[el.id]) { track(BY_ID[el.id]); return; }
     var href = el.getAttribute && el.getAttribute('href') || '';
-    if (/^tel:/.test(href)) track('clic_publicidad', { tipo: 'llamar', ubicacion: where(el) });
-    else if (/wa\.me/.test(href)) track('clic_publicidad', { tipo: 'whatsapp', ubicacion: where(el) });
+    if (/^tel:/.test(href)) contacto('llamar', 'contacto_llamada', el);
+    else if (/wa\.me/.test(href)) contacto('whatsapp', 'contacto_whatsapp', el);
     else if (href === '/app/') track('abrir_aplicacion');
   }, true);
   window.addEventListener('appinstalled', function () { track('app_instalada'); });

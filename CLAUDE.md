@@ -37,7 +37,7 @@ El estudio anunciante es Diez · Basanta · Sar Diez & Asoc. (derecho comercial 
 ## Antes de dar por terminado un cambio
 
 Probar con `npm run preview`:
-- La carátula carga y "Abrir la aplicación" lleva a `/app/`.
+- La carátula carga y "Completar mi carta documento" lleva a `/app/`.
 - En la aplicación: escribir sobre la carta (clic en un casillero), "Ver un ejemplo" (en "Mis cartas guardadas"), "Descargar PDF para imprimir" y "Descargar Word" funcionan, y la firma queda debajo del texto.
 - "Imprimir página de calibración (PDF)" descarga la hoja con las cuatro cruces.
 - No hay errores en la consola del navegador.

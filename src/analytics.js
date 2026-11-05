@@ -84,6 +84,7 @@
   document.addEventListener('click', function (e) {
     var el = e.target.closest && e.target.closest('button, a'); if (!el) return;
     if (el.id && BY_ID[el.id]) { track(BY_ID[el.id]); return; }
+    if (el.hasAttribute('data-modelo')) { track('usar_modelo', { modelo: el.getAttribute('data-modelo') }); return; }
     var href = el.getAttribute && el.getAttribute('href') || '';
     if (/^tel:/.test(href)) contacto('llamar', 'contacto_llamada', el);
     else if (/wa\.me/.test(href)) contacto('whatsapp', 'contacto_whatsapp', el);

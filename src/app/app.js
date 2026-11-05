@@ -313,7 +313,7 @@
     var d = document.createElement('div'); d.className = 'adstrip';
     d.style.left = mm(posMm(BODY.x, BODY.y, 'body', 'body').x); d.style.top = (LIMIT_MM + 3) + 'mm'; d.style.width = mm(S.body.w);
     d.innerHTML = '<span class="adtag">Publicidad · no se imprime</span>' + AD_SVG +
-      '<span><b>Derecho comercial y laboral</b> · Lavalle 1506, Piso 9° Of. “34”, C.A.B.A.<br>' +
+      '<span><b>Derecho comercial, laboral y sucesiones</b> · Lavalle 1506, Piso 9° Of. “34”, C.A.B.A.<br>' +
       '<a href="tel:+541143711548">(011) 4371-1548</a> · <a href="https://wa.me/5491168703785?text=Hola%2C%20te%20escribo%20desde%20Carta%20Documento%20F%C3%A1cil." target="_blank" rel="noopener sponsored">WhatsApp</a></span>';
     return d;
   }
@@ -1172,7 +1172,19 @@
 
   window.addEventListener('resize', fit);
 
+  // Modelo elegido en la guía de modelos: llega por sessionStorage, sin pasar por la dirección ni por la red.
+  function applyModel() {
+    var t = null;
+    try { t = sessionStorage.getItem('cdf-modelo'); sessionStorage.removeItem('cdf-modelo'); } catch (e) { return; }
+    if (!t) return;
+    var had = (S.data.cuerpo || '').trim();
+    if (had && had !== t && !window.confirm('Ya tenés texto en la carta. ¿Querés reemplazarlo por el modelo?')) return;
+    S.data.cuerpo = t; save();
+    draftMsg('Cargué el modelo en el cuerpo de la carta. Reemplazá lo que está entre [corchetes] con tus datos.');
+  }
+
   load();
+  applyModel();
   bindInputs();
   syncInputs();
   render();

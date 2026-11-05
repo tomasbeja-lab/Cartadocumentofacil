@@ -14,6 +14,7 @@ Sitio estático (sin framework ni dependencias) para completar una carta documen
 - `src/app/index.html` + `app.css` + `app.js`: la aplicación (editor sobre la carta, exportación PDF y Word, calibración).
 - `src/guia/como-completar-carta-documento/`: guía de contenido para SEO (cómo completar el formulario).
 - `src/guia/carta-documento/`: guía general para SEO (qué es, diferencias, cómo se envía, errores comunes, si recibiste una). Incluye un aviso del estudio en `id="abogado"`.
+- `src/guia/modelos-carta-documento/`: modelos de texto con corchetes para completar. “Usar este modelo” pasa el texto al editor por `sessionStorage` (clave `cdf-modelo`). Los textos los revisa el estudio antes de publicarse. Sin modelos laborales ni de sucesiones: esos casos se derivan al estudio o a otro estudio de abogados.
 - `src/privacidad/`: política de privacidad (se muestra la parte de Google Analytics solo si hay `GA_ID`).
 - `src/analytics.js`: Google Analytics con consentimiento previo; respeta Global Privacy Control y "No rastrear".
 - `src/sw.js`: desinstalador del viejo modo sin conexión (borra la caché y se da de baja en los dispositivos que lo tenían). Dejarlo publicado con `Cache-Control: no-cache`.
@@ -32,7 +33,7 @@ Sitio estático (sin framework ni dependencias) para completar una carta documen
 
 ## Publicidad
 
-El estudio anunciante es Diez · Basanta · Sar Diez & Asoc. (derecho comercial y laboral). Aparece en cuatro lugares: `src/index.html` (sección `id="estudios"`), `src/app/index.html` (bloque `class="ads"`), `src/app/app.js` (función `adStrip`, franja sobre la carta que no se imprime) y `src/guia/carta-documento/index.html` (sección `id="abogado"`). Si cambian los datos, actualizar los cuatro. Los enlaces “consultá con un abogado” de las guías y de las preguntas frecuentes llevan a esos avisos: el aviso siempre va marcado como “Publicidad”.
+El estudio anunciante es Diez · Basanta · Sar Diez & Asoc. (principalmente derecho comercial; también laboral y sucesiones). Aparece en cuatro lugares: `src/index.html` (sección `id="estudios"`), `src/app/index.html` (bloque `class="ads"`), `src/app/app.js` (función `adStrip`, franja sobre la carta que no se imprime) y `src/guia/carta-documento/index.html` (sección `id="abogado"`). Si cambian los datos, actualizar los cuatro. Los enlaces “consultá con un abogado” de las guías y de las preguntas frecuentes llevan a esos avisos: el aviso siempre va marcado como “Publicidad”.
 
 ## Antes de dar por terminado un cambio
 

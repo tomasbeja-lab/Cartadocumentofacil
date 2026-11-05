@@ -48,6 +48,7 @@ Si guardás un cambio en una **rama nueva** (la opción “Create a new branch�
 | Política de privacidad | `src/privacidad/index.html` |
 | Guía “Cómo completar una carta documento” | `src/guia/como-completar-carta-documento/index.html` |
 | Guía general “Carta documento: qué es, cómo se envía…” | `src/guia/carta-documento/index.html` |
+| Modelos de carta documento | `src/guia/modelos-carta-documento/index.html` |
 | Preguntas frecuentes | `src/index.html`, sección `id="preguntas"` |
 | Título y descripción que muestra Google | La cabecera (`<title>` y `<meta name="description">`) de cada página |
 | Imagen al compartir por WhatsApp o redes | `src/og-image.png` (1200 × 630 px) |

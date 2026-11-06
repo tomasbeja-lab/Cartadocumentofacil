@@ -1172,16 +1172,64 @@
 
   window.addEventListener('resize', fit);
 
+  function putModel(t) {
+    var had = (S.data.cuerpo || '').trim();
+    if (had && had !== t && !window.confirm('Ya tenés texto en la carta. ¿Querés reemplazarlo por el modelo?')) return false;
+    S.data.cuerpo = t; save();
+    $('modeloMsg').textContent = 'Cargué el modelo en el cuerpo de la carta. Reemplazá lo que está entre [corchetes] con tus datos.';
+    return true;
+  }
+
   // Modelo elegido en la guía de modelos: llega por sessionStorage, sin pasar por la dirección ni por la red.
   function applyModel() {
     var t = null;
     try { t = sessionStorage.getItem('cdf-modelo'); sessionStorage.removeItem('cdf-modelo'); } catch (e) { return; }
-    if (!t) return;
-    var had = (S.data.cuerpo || '').trim();
-    if (had && had !== t && !window.confirm('Ya tenés texto en la carta. ¿Querés reemplazarlo por el modelo?')) return;
-    S.data.cuerpo = t; save();
-    draftMsg('Cargué el modelo en el cuerpo de la carta. Reemplazá lo que está entre [corchetes] con tus datos.');
+    if (t) putModel(t);
   }
+
+  /* ---------- Ver modelos ---------- */
+  // Los textos están solo en la guía de modelos: se leen de esa página y el pedido no lleva datos de la carta.
+  var modelos = null;
+  function loadModels() {
+    modelos = {};
+    fetch('/guia/modelos-carta-documento/').then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    }).then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      doc.querySelectorAll('p[id^="m-"]').forEach(function (p) {
+        var k = p.id.slice(2), o = document.createElement('option');
+        modelos[k] = p.textContent;
+        o.value = k; o.textContent = doc.getElementById(k).textContent;
+        $('modeloSel').appendChild(o);
+      });
+    }).catch(function () {
+      modelos = null;
+      $('modeloMsg').textContent = 'No pude cargar los modelos. Revisá tu conexión y volvé a tocar “Ver modelos”.';
+      showModels(false);
+    });
+  }
+  function showModels(open) {
+    $('modelosBox').hidden = !open;
+    $('btnModelos').setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function pickModel(k) {
+    $('modeloSel').value = k;
+    $('modeloElegido').hidden = !k;
+    $('modeloPrev').textContent = k ? modelos[k] : '';
+    $('btnModeloUsar').setAttribute('data-modelo', k);  // analytics.js lee de acá qué modelo se usó
+  }
+  $('btnModelos').addEventListener('click', function () {
+    var open = $('modelosBox').hidden;
+    showModels(open);
+    if (open) { $('modeloMsg').textContent = ''; if (!modelos) loadModels(); }
+  });
+  $('modeloSel').addEventListener('change', function () { pickModel($('modeloSel').value); });
+  $('btnModeloUsar').addEventListener('click', function () {
+    if (!putModel(modelos[$('modeloSel').value])) return;
+    $('cuerpo').value = S.data.cuerpo; render();
+    pickModel(''); showModels(false);
+  });
 
   load();
   applyModel();

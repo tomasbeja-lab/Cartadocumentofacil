@@ -81,7 +81,21 @@
     </div>
 
     <h2>Texto</h2>
-    <div class="row"><label for="cuerpo">Cuerpo de la carta</label><textarea id="cuerpo" rows="9"></textarea></div>
+    <div class="row">
+      <div class="labelbar"><label for="cuerpo">Cuerpo de la carta</label><button type="button" class="mini" id="btnModelos" aria-expanded="false" aria-controls="modelosBox">Ver modelos*</button></div>
+      <div class="modelos" id="modelosBox" hidden>
+        <label for="modeloSel">Elegí un modelo</label>
+        <select id="modeloSel"><option value="">Seleccioná uno…</option></select>
+        <div id="modeloElegido" hidden>
+          <p class="modelo-prev" id="modeloPrev"></p>
+          <button type="button" class="primary" id="btnModeloUsar">Usar este modelo</button>
+        </div>
+        <p class="note">* Son textos orientativos, no asesoramiento legal: adaptalos a tu caso. Reemplazá todos los [corchetes] y revisá el plazo y lo que dice tu contrato, porque depende de cada caso.</p>
+        <p class="note">No hay modelos para temas laborales ni sucesiones: para esos casos contactá a Diez · Basanta · Sar Diez &amp; Asoc. (publicidad) o a otro estudio de abogados. Más detalles en <a href="/guia/modelos-carta-documento/" target="_blank" rel="noopener">la guía de modelos</a>.</p>
+      </div>
+      <textarea id="cuerpo" rows="9"></textarea>
+      <p class="note" id="modeloMsg" role="status" aria-live="polite"></p>
+    </div>
     <div class="ads">
       <p class="ad-tag">Publicidad</p>
       <div class="adcard">

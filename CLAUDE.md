@@ -14,7 +14,7 @@ Sitio estático (sin framework ni dependencias) para completar una carta documen
 - `src/app/index.html` + `app.css` + `app.js`: la aplicación (editor sobre la carta, exportación PDF y Word, calibración).
 - `src/guia/como-completar-carta-documento/`: guía de contenido para SEO (cómo completar el formulario).
 - `src/guia/carta-documento/`: guía general para SEO (qué es, diferencias, cómo se envía, errores comunes, si recibiste una). Incluye un aviso del estudio en `id="abogado"`.
-- `src/guia/modelos-carta-documento/`: modelos de texto con corchetes para completar. “Usar este modelo” pasa el texto al editor por `sessionStorage` (clave `cdf-modelo`). Los textos los revisa el estudio antes de publicarse. Sin modelos laborales ni de sucesiones: esos casos se derivan al estudio o a otro estudio de abogados.
+- `src/guia/modelos-carta-documento/`: modelos de texto con corchetes para completar. “Usar este modelo” pasa el texto al editor por `sessionStorage` (clave `cdf-modelo`). “Ver modelos*”, en el panel de la aplicación, lee los textos de esa misma página: es el único lugar donde se editan. Los textos los revisa el estudio antes de publicarse. Sin modelos laborales ni de sucesiones: esos casos se derivan al estudio o a otro estudio de abogados.
 - `src/privacidad/`: política de privacidad (se muestra la parte de Google Analytics solo si hay `GA_ID`).
 - `src/analytics.js`: Google Analytics con consentimiento previo; respeta Global Privacy Control y "No rastrear".
 - `src/sw.js`: desinstalador del viejo modo sin conexión (borra la caché y se da de baja en los dispositivos que lo tenían). Dejarlo publicado con `Cache-Control: no-cache`.

@@ -1,0 +1,14 @@
+# Páginas de una versión anterior del sitio que Google todavía tiene indexadas.
+# Las laborales no se redirigen porque no se publican modelos laborales: quedan con 404.
+/modelos /guia/modelos-carta-documento/ 301
+/modelos/ /guia/modelos-carta-documento/ 301
+/modelos/intimacion-de-pago /guia/modelos-carta-documento/#deuda 301
+/modelos/intimacion-de-pago/ /guia/modelos-carta-documento/#deuda 301
+/modelos/alquiler-impago /guia/modelos-carta-documento/#alquiler 301
+/modelos/alquiler-impago/ /guia/modelos-carta-documento/#alquiler 301
+/modelos/reclamo-producto-defectuoso /guia/modelos-carta-documento/#reclamo 301
+/modelos/reclamo-producto-defectuoso/ /guia/modelos-carta-documento/#reclamo 301
+/modelos/rechazo-carta-documento /guia/carta-documento/#recibi 301
+/modelos/rechazo-carta-documento/ /guia/carta-documento/#recibi 301
+/abogado-carta-documento /guia/carta-documento/#abogado 301
+/abogado-carta-documento/ /guia/carta-documento/#abogado 301

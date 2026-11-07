@@ -19,6 +19,7 @@ Sitio estático (sin framework ni dependencias) para completar una carta documen
 - `src/analytics.js`: Google Analytics con consentimiento previo; respeta Global Privacy Control y "No rastrear".
 - `src/sw.js`: desinstalador del viejo modo sin conexión (borra la caché y se da de baja en los dispositivos que lo tenían). Dejarlo publicado con `Cache-Control: no-cache`.
 - `src/sitemap.xml`: **si agregás una página, sumala acá.**
+- `src/_redirects`: redirecciones 301 de páginas viejas que Google tenía indexadas. **Si cambiás de dirección una página publicada, sumala acá.**
 - `brand/`: logos del estudio anunciante (no se publican).
 
 ## Reglas del proyecto (no negociables)
